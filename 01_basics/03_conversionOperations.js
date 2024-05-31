@@ -61,8 +61,17 @@ let str3 = str1 + str2
 
 // console.log( (3 + 4) * 5 % 3);
 
-// console.log(+true);
-// console.log(+"");
+// console.log(+true); => value 1
+// console.log(+"");   => value 0
+
+/*
+  JavaScript Expression Evaluation:
+  - Order of operations matters in JavaScript expressions.
+  - String Concatenation: When using the + operator with strings, JavaScript performs string concatenation. The order of concatenation follows left-to-right evaluation.
+  - Numeric Addition: When using the + operator with numeric values, JavaScript performs addition. The order of addition follows left-to-right evaluation.
+  - Mixed Types: When mixing strings and numbers with the + operator, JavaScript converts the numbers to strings and performs string concatenation.
+*/
+
 
 let num1, num2, num3
 
