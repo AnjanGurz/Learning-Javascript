@@ -24,7 +24,7 @@ let isLoggedIn = false
 
 
 // non-primitive dataType:
-// object
+// object type
 
 console.log(typeof name); // string
 console.log(typeof null); // obj
