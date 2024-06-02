@@ -39,7 +39,7 @@ console.log(undefined < 0);
 
 // === 
 
-console.log("2" === 2); // checks is it both are same datatype first and then value and returns statement
+console.log("2" === 2); // checks is it both are same datatype first and then value and returns statementn which is false in this case
 
 //== -> converts explictly(auto) between comparison  
 
