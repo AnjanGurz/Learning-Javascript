@@ -1,7 +1,7 @@
 const accountId = 144553;
 let accountEmail = "hitesh@google.com";
 var accountPassword = "12345";
-accountCity = "Jaipur"; // this also creates the variable with out key word of let var and const but it is not the way to write it so avoid it just letting to know this kinda thing also possible.
+accountCity = "Jaipur"; // this also creates the variable with out key word of let var and const but it is not the right way to write it so have to avoid it. just letting to know this kinda thing also possible.
 let accountState;
 
 // accountId = 2 // not allowed because the varaible is const
@@ -18,8 +18,10 @@ Prefer not to use var
 because of issue in block scope and functional scope
 */
 
-// let donot give permisson to redeclare the same name of variable in new line of code except block and func scope where var does that and makes the program complicated and errors but both can be updated with their value. for eg:
 /*
+let doesnot give permisson to redeclare the same name of variable in new line of code 
+except block and func scope where var does that and makes the program complicated and errors 
+but both can be updated with their value. 
 
 for ex: let cup = "water";
         let cup = "juice"; //not allowed same memory(variable) name cannot be redeclared
