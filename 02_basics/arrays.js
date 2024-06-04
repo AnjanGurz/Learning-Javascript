@@ -94,3 +94,85 @@ The slice and splice methods:
         splice removes elements (and can also add new ones) and modifies the original array.
 
 */
+
+
+
+
+
+
+// ************  notes to read for my self **************
+
+/*
+JavaScript Arrays:
+
+- Arrays can store different types of data dynamically in a single variable.
+- Arrays enable storing a collection of multiple items under a single variable name and have methods for common array operations.
+- Arrays are objects, not primitives.
+- Arrays are resizable and can contain mixed data types.
+- Arrays use nonnegative integers for indexes, not strings (not associative).
+- Arrays are zero-indexed: the first element is at index 0, the second at index 1, etc.
+- The last element is at array.length - 1.
+- Array-copy operations create shallow copies (pass by reference).
+
+Examples:
+
+let myArr = [0, 1, 2, 3, 4, 5];
+const myHeroes = ["shaktiman", "naagraj"];
+
+const myArr2 = new Array(1, 2, 3, 4); // Create array with direct data.
+
+// Array methods
+myArr.push(6);       // Add 6 to the end
+myArr.push(7);       // Add 7 to the end
+myArr.pop();         // Remove the last element
+
+myArr.unshift(9);    // Add 9 to the start
+myArr.shift();       // Remove the first element
+
+console.log(myArr.includes(9));  // Check if 9 is in the array (true/false)
+console.log(myArr.indexOf(3));   // Find the index of 3
+
+const newArr = myArr.join();     // Convert array to string (elements separated by commas)
+console.log(myArr);
+console.log(newArr);
+
+// Slice and splice
+console.log("A ", myArr);
+
+const myn1 = myArr.slice(1, 3);  // Extract elements from index 1 to 2
+console.log(myn1);               // Log the new sliced array
+console.log("B ", myArr);        // Log the original array (unchanged)
+
+const myn2 = myArr.splice(1, 3); // Remove 3 elements starting from index 1
+console.log("C ", myArr);        // Log the modified array
+console.log(myn2);               // Log the removed elements
+
+// Explanation:
+
+// slice(start, end):
+// - Returns a shallow copy of a portion of the array.
+// - Does not modify the original array.
+// - The end index is not included.
+
+// Example:
+const myArr = [1, 2, 3, 4, 5];
+const slicedArr = myArr.slice(1, 3); // Extract elements from index 1 to 2
+console.log(slicedArr); // Output: [2, 3]
+console.log(myArr);     // Output: [1, 2, 3, 4, 5] (original array remains unchanged)
+
+// splice(start, deleteCount, item1, item2, ...):
+// - Removes elements and optionally inserts new elements.
+// - Includes the last index of the specified range in removal.
+// - Modifies the original array.
+// - Returns the removed elements.
+
+// Example:
+const myArr = [1, 2, 3, 4, 5];
+const splicedArr = myArr.splice(1, 3); // Remove 3 elements starting from index 1
+console.log(splicedArr); // Output: [2, 3, 4]
+console.log(myArr);      // Output: [1, 5] (original array is modified)
+
+// Summary:
+// - slice extracts a portion of the array without modifying it.
+// - splice removes (and can add) elements, modifying the original array.
+*/
