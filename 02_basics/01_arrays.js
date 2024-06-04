@@ -100,7 +100,7 @@ The slice and splice methods:
 
 
 
-// ************  notes to read for my self **************
+// ************  Notes to read for my self **************
 
 /*
 JavaScript Arrays:
