@@ -1,3 +1,5 @@
-# Learning javascript from chaiAurCode Youtube channel
+# Intro to javascript 
+
+Learning javascript from chaiAurCode Youtube channel
 
 
