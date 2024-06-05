@@ -164,3 +164,54 @@ Summary
     Arrow Functions: this is inherited from the outer scope.
 
 */
+
+/*
+
+********** more about symbol*********
+
+When using symbols as keys in JavaScript objects, it's essential to follow a specific approach:
+1. Creating a Symbol
+
+First, you need to create a symbol using the Symbol() function. This function generates a unique symbol every time it's called. You can also provide an optional description string for debugging purposes.
+
+Example:
+
+const mySymbol = Symbol("description");
+
+2. Using the Symbol as a Key
+
+To use the symbol as a key in an object, enclose the symbol variable in square brackets [] when defining the property. This allows you to assign a value to the property associated with that symbol.
+
+Example:
+
+const obj = {
+    [mySymbol]: "value"
+};
+
+3. Accessing the Symbol Property
+
+You can access the property associated with the symbol using the same square bracket notation []. This retrieves the value stored under that symbol key in the object.
+
+Example:
+
+console.log(obj[mySymbol]); // Output: value
+
+4. Symbol Uniqueness
+
+It's important to note that each call to Symbol() returns a new, unique symbol, even if the description strings are identical(similar/same). This uniqueness ensures that symbols created with the same description are distinct and not equal to each other.
+
+Example:
+
+const mySymbol1 = Symbol("description");
+const mySymbol2 = Symbol("description");
+
+console.log(mySymbol1 === mySymbol2); // Output: false
+
+but variable names must be unique within the same scope. 
+
+By following this methodology, you can effectively utilize symbols as unique keys in JavaScript objects, enabling the creation of private or non-colliding properties.
+
+
+
+
+*/
