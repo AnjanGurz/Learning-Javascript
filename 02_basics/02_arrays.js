@@ -9,7 +9,7 @@ marvelHeroes.push(dcHeroes);
 console.log(marvelHeroes);
 /*
 Explanation:
-- We used the push() method to add the dcHeroes array as a single element into the marvelHeroes array.
+- We used the push() method to add the dcHeroes array as a single element into the marvelHeroes array at the end of the element.
 - This results in the entire dcHeroes array becoming a single element within the marvelHeroes array.
 - So, the marvelHeroes array now contains four elements: Thor, Ironman, Spiderman, and the dcHeroes array itself.
 */
