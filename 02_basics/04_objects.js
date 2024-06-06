@@ -15,20 +15,22 @@ tinderUser.isLoggedIn = false;
 // console.log(tinderUser);
 
 
-// creating obj and adding nested obj in key 
+// Creating an object using object literal and adding a nested object in a key
 const regularUser = {
-    email : "techstaack@gmail.com",
-    fullname : {
-        userFullName : {
-            firstName : "samir",
-            lastName : "grg",
+    email: "techstaack@gmail.com",
+    fullname: {
+        userFullName: {
+            firstName: "samir",
+            lastName: "grg",
         }
     }
 }
 
-// console.log(regularUser.fullname);
-// console.log(regularUser.fullname.userFullName);
-// console.log(regularUser.fullname.userFullName.lastName);
+// Accessing nested objects and their properties
+console.log(regularUser.fullname); // Output: { userFullName: { firstName: 'samir', lastName: 'grg' } }
+console.log(regularUser.fullname.userFullName); // Output: { firstName: 'samir', lastName: 'grg' }
+console.log(regularUser.fullname.userFullName.lastName); // Output: grg
+
 
 // merge objects
 
@@ -56,6 +58,7 @@ const obj4 = Object.assign({}, obj1,obj2); // here the {} target and the objects
 
 // console.log(obj4);
 
+// another topic
 // In case we are assuming in real website we encounter when value comes from the database it comes into the array of obj like below example
 const users = [
     {
@@ -80,13 +83,13 @@ users[1].email;
 console.log(tinderUser);
 console.log(Object.keys(tinderUser)); // keys of the tinderuser obj -> it's data type is array
 console.log(Object.values(tinderUser)); // values of the tinderuser obj
-console.log(Object.entries(tinderUser)); //  takes keyvalue pairs into each array and the each array hold 2 index and the 1st index is key and second is value -of the tinderuser obj
+console.log(Object.entries(tinderUser)); //  takes keyvalue pairs as an array and the each array hold 2 index(elements) and the 1st index is key and second is value -of the tinderuser obj
 
 // ex output of entries method: [ [ 'id', '123xyz' ], [ 'name', 'Sam' ], [ 'isLoggedIn', false ] ]
 
 /*
 -----IMPORTANT POINT-----
-! Only When you use methods like Object.keys(), Object.values(), or Object.entries(), they return arrays that represent the properties of the object in various formats.
+! Only When you use methods like Object.keys(), Object.values(), or Object.entries(), they return as an array that represent the properties of the object in various formats.
 
     Object.keys(obj) returns an array of the object's own enumerable property keys.
     Object.values(obj) returns an array of the object's own enumerable property values.
@@ -113,7 +116,7 @@ const course = {
     courseInstructor : "hitesh"
 }
 
-// this is the most use way to acess the property of obj
+// this is the most use way to access the property of obj by using DOT notation
 // course.courseInstructor
 
 // another way -> Object Destructuring 
@@ -125,9 +128,13 @@ syntax:
 variableType {keyName} = object(that is from key)
 
 now you can access it by directly with the keyName as variable after 
-const {courseInstructor} = course;
+const {courseInstructor} = course; 
+// where course is an variable holding an obj and courseInstructor is it's key
 
-and now if you think the name of above code key courseInstructor is too long you can change the name directly through using : notation after keyName and you can use that name directly to access the key of a obj which is known as obj destructor
+// checking the value
+// console.log(courseInstructor); output: hitesh
+
+Furthermore, if you think the name of above code key courseInstructor is too long you can change the name directly through using : notation after keyName and you can use that name directly to access the key of a obj which is known as obj destructor
 
 const {courseInstructor: instructor} = course;
 
@@ -158,21 +165,13 @@ console.log(instructor); // output : hitesh
 */ 
 
 //---json---
-// it is similar to an obj but donot contain a name like obj and most imp the both key value pairs are stored in ""(string) format.
+// it is similar to an obj but donot contain a name(variable) like obj and most imp the both key value pairs are stored in ""(string) format.
 // {
 //     "name" : "hero",
 //     "courseName" : "js in hindi",
 //     "price" : "free"
 
 // }
-
-
-// some times we can get the jsonAPI in format of API
-[
-    {},
-    {},
-    {}
-] 
 
 
 /*
@@ -251,7 +250,12 @@ Summary
 
 */
 
-
+// some times we can get the jsonAPI in format of array having objects as element of it
+[
+    {},
+    {},
+    {}
+] 
 
 
 
