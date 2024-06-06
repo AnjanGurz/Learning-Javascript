@@ -56,7 +56,7 @@ const obj4 = Object.assign({}, obj1,obj2); // here the {} target and the objects
 
 // console.log(obj4);
 
-// when value comes from the database it comes into the array of obj like below example
+// In case we are assuming in real website we encounter when value comes from the database it comes into the array of obj like below example
 const users = [
     {
         id :1,
@@ -82,7 +82,7 @@ console.log(Object.keys(tinderUser)); // keys of the tinderuser obj -> it's data
 console.log(Object.values(tinderUser)); // values of the tinderuser obj
 console.log(Object.entries(tinderUser)); //  takes keyvalue pairs into each array and the each array hold 2 index and the 1st index is key and second is value -of the tinderuser obj
 
-// ex output: [ [ 'id', '123xyz' ], [ 'name', 'Sam' ], [ 'isLoggedIn', false ] ]
+// ex output of entries method: [ [ 'id', '123xyz' ], [ 'name', 'Sam' ], [ 'isLoggedIn', false ] ]
 
 /*
 -----IMPORTANT POINT-----
