@@ -73,13 +73,14 @@ function loginUserMessage(username = 'crunky'){
     /* If username is undefined, null, an empty string "", 0, NaN, or false, 
     then !username evaluates to true. If username contains any other value 
     (including non-empty strings, numbers, objects, arrays, or functions), 
-    then !username evaluates to false. */
+    then !username evaluates to false. 
+    simply username doesnot include anything or store nousername(!username)*/
     if(!username){
         console.log(`please enter a username`);
         return;
     }
     return `${username} just logged in....`;
-    // you can also add default value in the parameter like (username = 'crunky') and then the if statement would never run cuz it wont be true and if you pass parameter with new argument it will be override and runs the new value that is passed. 
+    // you can also add default value in the parameter like (username = 'crunky') and then the if statement would never run cuz it wont be true cuz the default value and if you pass parameter with new argument it will be override and runs the new value that is passed. 
 }
 
 console.log(loginUserMessage("Anjan"));
@@ -87,3 +88,55 @@ console.log(loginUserMessage("Anjan"));
 console.log(`no value passed`);
 console.log(loginUserMessage()); // undefined just logged in.... so now we use conditional statement 
 
+// -----------------------------functions with obj and an array-----------------------
+
+// use scenario of ecommerce website 
+function calculateCartPrice(...num1){
+    return num1;
+} 
+
+// console.log(calculateCartPrice(200, 300, 400)); // it only gives 200 so have to use ...rest operator
+// rest operator used for handling an indefinite number of arguments.
+
+// to pass multiple arguments(values) in a fucntion ... rest operator is use in parameter and stores in an array and returns it 
+console.log(`after using ... rest operator in parameter in a function`); // gives the arguments as an array while return lets check
+console.log(calculateCartPrice(200, 300, 400));
+
+// Furthermore another condition like below with 3 parameters
+function calculateCartbox(val1, val2, ...num1){
+    // return val1, val2, num1; //=>return statement return val1, val2, num1; doesn't work as expected. It only returns num1 as the value of the function. If you want to return multiple values, you might need to structure your return statement differently, such as returning an object containing all the values.
+    return { val1, val2, num1 };
+} 
+
+calculateCartbox(200, 400, 300, 400);
+// After running this func the 2 initial argument that passed will go in val 1 and 2 and the rest will be an array of num1 lets check in console
+console.log(calculateCartbox(200, 400, 300, 400));
+const user = {
+    userName : "Anjan",
+    price : 299
+}
+
+function handleObject(anyobject){
+    console.log(`Username is ${anyobject.userName} and price is ${anyobject.price}.`)
+}
+
+handleObject(user);
+
+// you can also pass the obj directly as argument
+handleObject({
+    userName: "Crunky",
+    price: 2099
+})
+
+// lets pass an array in func
+const myNewArray = [400, 300, 200, 100]
+
+function returnSecondValue(getArray){
+    // return getArray[getArray.length-1]; // just fur fun not according to name of func
+    return getArray[1]; // according to func name return index 1 as 2nd value of an array
+
+}
+
+// let's check 
+
+console.log(returnSecondValue(myNewArray));
