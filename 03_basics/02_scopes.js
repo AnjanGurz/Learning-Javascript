@@ -89,3 +89,7 @@ const addTwo = function(num){
 }
 
 addTwo(5);
+
+
+
+// this key word works in regular function because it is an global obj but doesnot work in other func like anonymous and arrow function
