@@ -1,5 +1,13 @@
 // Scopes
 
+/*
+
+Function Scope
+
+Variables defined inside a function are scoped to that function and are not accessible from outside the function.
+
+*/
+
 // var c = 400;  // As we know var is global scope and big problem so let and const came which has block scope
 
 // {}  -> this is block scope 
@@ -31,6 +39,13 @@ if(true){
 // *****imp point the scope, global scope is diff in vscode through node check and different in browser check *******
 
 // NESTED SCOPE
+
+/*
+Function Scope
+
+Variables defined inside a function are scoped to that function and are not accessible from outside the function.
+
+*/
 
 function one(){
     const userName = "Firoj"
@@ -83,9 +98,9 @@ addOne(3); // this is function call you can call the function any where in the c
 
 
 // anonymous function where variable holds a function having no name(no identifier)
-
+// Anonymous functions are functions without a name. They are often used as arguments to other functions or assigned to variables.
 const addTwo = function(num){
-    return + 2;
+    return num + 2;
 }
 
 addTwo(5);
