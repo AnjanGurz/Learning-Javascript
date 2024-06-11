@@ -77,7 +77,7 @@ chai(); // empty obj{}
 
 // const addTwo = (num1, num2) =>  num1 + num2
 
-// const addTwo = (num1, num2) => ( num1 + num2 ) // same as abobe code implicit method
+// const addTwo = (num1, num2) => ( num1 + num2 ) // same as above code implicit method
 
 const addTwo = (num1, num2) => ({username: "hitesh"}) // but in js obj cannot return with out() to retrun implicit so have to use it
 
