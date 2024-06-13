@@ -92,7 +92,7 @@ console.log(Object.entries(tinderUser)); //  takes keyvalue pairs as an array an
 ! Only When you use methods like Object.keys(), Object.values(), or Object.entries(), they return as an array that represent the properties of the object in various formats.
 
     Object.keys(obj) returns an array of the object's own enumerable property keys.
-    Object.values(obj) returns an array of the object's own enumerable property values.
+    Object.values(obj) returns an array of the object's own enumerable property values. - values of key return as an in array format
     Object.entries(obj) returns an array of the object's own enumerable property [key, value] pairs.
 
 These methods provide array-like access to the properties of an object, allowing you to iterate over them or perform other array operations. However, the underlying data structure of the object itself is not an array. It's typically a hash table or dictionary optimized for quick property access based on keys
