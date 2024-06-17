@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom | Chai aur code by Anjan</title>
+</head>
+<body style = 'background-color: black; color: white;'>
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+
+        <!-- to check the diff about doubt below -->
+        <!-- 
+        <div class="day"><h1>Monday</h1></div>
+        <div class="day"><h1>Tuesday</h1></div>
+        <div class="day"><h1>Wednesday</h1></div>
+        <div class="day"><h1>Thursday</h1></div> 
+        -->
+        
+    </div>
+
+    
+</body>
+
+<script>
+    const parent = document.querySelector('.parent');
+    console.log(parent);
+    console.log(parent.children);
+    console.log(parent.children[1].innerHTML); // accesing elements from htmlcollection parentchildren
+
+    /* DOUBT ABOUT -> innerText and innerHTML
+    The innerHTML property, when accessed on an element that contains only text content (no nested tags), will return that text content as a string. It does not add any additional HTML structure or tags because there are none to include.
+
+    Conclusion:
+    In scenarios where the targeted elements (<div>, <p>, etc.) contain only plain text content without nested child elements (tags within tags), using innerHTML or innerText might yield very similar results. The key distinction between these properties becomes more apparent when the elements contain nested HTML tags or when you specifically need to manipulate the HTML structure itself.
+    */
+
+    // for (let i = 0; i < parent.children.length; i++) {
+    //     console.log(parent.children[i].innerHTML);        
+    // }
+
+    // changing color using [] notation of parent children with ther position index
+    parent.children[0].style.color = "green";
+    parent.children[1].style.color = "Red";
+    parent.children[2].style.color = "blue";
+    parent.children[3].style.color = "yellow";
+
+    console.log(parent.firstElementChild);
+    console.log(parent.lastElementChild);
+
+    const dayOne = document.querySelector('.day')
+    console.log(dayOne); // shows the inital tag holding class named (.day) due to queryselector 
+    console.log(dayOne.parentElement); // accesing the parent element of dayOne which is tag having .day class name
+
+    parent.children[0].innerText = "ok"; // chaning the textnode
+    console.log(dayOne); 
+    console.log(dayOne.nextElementSibling); 
+
+    console.log(`nodes: `, parent.childNodes);// every break point counts as nodes in jsdom like even space and enter chaning line
+
+        /*
+        
+        Notes:
+
+        Node Types: Remember that childNodes includes all types of nodes directly under the parent, not just elements.
+        
+        */
+
+/*
+        
+      childNodes in JavaScript
+Definition: childNodes is a property of DOM elements in JavaScript that returns a NodeList containing all child nodes directly nested within a parent node.
+
+Node Types Included:
+
+    Element Nodes: Represented by HTML tags (<div>, <p>, etc.).
+    Text Nodes: Contain text content within elements.
+    Comment Nodes: Represented by HTML comments 
+
+Whitespace Nodes:
+
+   text nodes also including whitespace (spaces, new lines)   
+        
+        
+*/
+
+
+
+    
+
+</script>
+</html>
