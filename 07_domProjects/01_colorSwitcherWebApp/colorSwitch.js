@@ -9,7 +9,7 @@ const home = document.getElementById('home');
 // Select the instruction element
 const instruction = document.getElementById('instruction');
 
-// Object to map color IDs to motivational quotes
+// Object to map color IDs to decription of color
 const aboutColor = {
   grey: "Explore the elegance of grey!",
   white: "Embrace simplicity with white!",
