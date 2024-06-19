@@ -34,4 +34,32 @@ html {
   #yellow {
     background: yellow;
   }
+
+  #green {
+    background: green;
+  }
   
+  nav{
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  nav>a{
+    font-family: 'Arial', sans-serif; /* Choose a suitable font */
+    font-size: 40px; /* Adjust font size as needed */
+    font-weight: bolder;
+    color: white;
+  
+  }
+
+  body{
+    background-color: black;
+    color: white;
+  }
+
+  footer{
+    text-align: center;
+    position: absolute;
+    bottom: 4px;
+    width: 100%;
+  }
