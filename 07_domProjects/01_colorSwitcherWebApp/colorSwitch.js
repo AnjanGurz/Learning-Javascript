@@ -50,7 +50,7 @@ buttons.forEach((btn) => {
 
     }
 
-    // Update the instruction text and motivational quote based on the clicked color
+    // Updates the text about color based on the clicked color
     instruction.textContent = aboutColor[event.target.id];
 
 
