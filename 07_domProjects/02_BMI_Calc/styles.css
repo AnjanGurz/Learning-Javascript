@@ -1,0 +1,92 @@
+
+/* comment for my understanding for code review */
+
+body {
+    background: #000000;; /* random color background */
+    font-family: Arial, sans-serif; /* Default font */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+  }
+  
+  .container {
+    width: 400px; /* Adjusted width for responsiveness */
+    max-width: 90%; /* Maximum width for smaller screens */
+    margin: 50px auto; /* Center the container */
+    background-color: #686b6b; /* White background */
+    padding: 30px; /* Padding inside the container */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  }
+  
+  h1 {
+    text-align: center; /* Center align heading */
+    margin-bottom: 20px; /* Space below heading */
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  label {
+    font-weight: bold; /* Bold labels */
+    margin-bottom: 8px; /* Space below labels */
+  }
+  
+  input[type="text"] {
+    width: 100%; /* Full width input */
+    padding: 10px; /* Padding inside input */
+    margin: 8px 0; /* Space around input */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 4px; /* Rounded corners */
+    box-sizing: border-box; /* Include padding in width */
+  }
+  
+  button {
+    width: 70%; /* Full width button */
+    padding: 12px; /* Padding inside button */
+    margin-top: 20px; /* Space above button */
+    background-color: #000000; /* Green background */
+    color: #fff; /* White text color */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    font-size: 16px; /* Font size */
+  }
+  
+  button:hover {
+    background-color: #074d0a; /* Darker green on hover */
+  }
+  
+  #results {
+    text-align: center; /* Center align result text */
+    font-size: 20px; /* Font size */
+    margin-top: 20px; /* Space above result */
+  }
+  
+  #weight-guide {
+    margin-top: 20px; /* Space above weight guide */
+  }
+  
+  #weight-guide h3 {
+    text-align: center; /* Center align heading */
+    margin-bottom: 10px; /* Space below heading */
+  }
+  
+  #weight-guide p {
+    text-align: center; /* Center align paragraphs */
+    margin: 5px 0; /* Space around paragraphs */
+  }
+  
+  @media (max-width: 600px) {
+    .container {
+      width: 90%; /* Full width on smaller screens */
+      padding: 20px; /* Adjusted padding */
+    }
+  
+    button {
+      font-size: 14px; /* Smaller font size for button on smaller screens */
+    }
+  }
+  
