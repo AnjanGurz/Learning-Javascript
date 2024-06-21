@@ -3,6 +3,8 @@ const select = (name) => document.querySelector(name);
 const form = select("form");
 
 form.addEventListener("submit", (event) => {
+  
+  // event.preventDefault() stops the form from submitting in the default manner, which allows custom validation and processing, if not done it will reload the page and not control over the program after an event occur like inputvalidation and control over it
   event.preventDefault();
 
   // we are taking values after an event so it is in this under block of code not the outside
