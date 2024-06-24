@@ -1,0 +1,150 @@
+
+
+<!-- 
+    Event propagation is a fundamental concept in web development, specifically in the context of handling events in the Document Object Model (DOM). It describes the way events move through the DOM tree. There are three main phases of event propagation: capturing, targeting, and bubbling. Let's break these down in the simplest terms.
+
+    1. Capturing Phase (Event Capturing)
+
+        The event starts from the root of the DOM tree and moves down towards the target element.
+        During this phase, parent elements get a chance to handle the event before it reaches the target element.
+
+    2. Target Phase (Event Targeting)
+
+        The event reaches the target element, the element that actually triggered the event.
+        The target element gets a chance to handle the event.
+
+    3. Bubbling Phase (Event Bubbling)
+
+        After reaching the target element, the event bubbles up back to the root of the DOM tree.
+        During this phase, parent elements get another chance to handle the event, this time after the target element has handled it. 
+-->
+
+<!-- 
+
+
+    ---The third -> useCapture(true, false) Parameter in addEventListener & the stop propagtion method and how it differs from this
+
+    useCapture set to true:
+        When useCapture is true in addEventListener, it means the event listener reacts during the capturing phase, which means the event execution happens first before reaching the target element.
+        This phase starts from the outermost ancestor element and moves towards the target element.
+        It's like setting up early security checks or preparations before an event reaches its final destination (the target element). Useful for intercepting events early in the DOM hierarchy, before they can affect child elements.
+
+    Default (useCapture set to false or omitted):
+        When useCapture is false or omitted in addEventListener, events are handled during the bubbling phase. This phase moves from the target element back up towards the outermost ancestor element.
+        This default mode is like reacting after an event has happened on the target and now you're seeing how it affects the surroundings. It's the most common way to handle events, letting them naturally flow back up through the DOM.
+
+event.stopPropagation()
+
+    Usage: Calling event.stopPropagation() inside an event handler prevents the event from propagating further through the DOM after it's been handled on the target element.
+    Effect: It's like saying, "Stop right here!" to prevent any additional actions or reactions from parent or sibling elements.
+
+Summary
+
+    Capturing Phase (useCapture set to true):
+        It's about preparing for the event as it travels towards its target (outer to inner).
+        Useful for setting up conditions or handling event-related tasks early in the event's journey.
+
+    Bubbling Phase (useCapture set to false or omitted):
+        It's about reacting to the event after it has happened on the target (inner to outer).
+        The default mode for handling events, reacting to the aftermath of what occurred.
+
+    event.stopPropagation():
+        It stops the event in its tracks after it's been managed on the target element.
+        Ensures that the event's influence doesn't spread beyond where it's intended to act.
+
+
+
+
+-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Propagation Example</title>
+</head>
+<body style="background-color: black;">
+    <div id="parent">
+        <button id="child">Click Me</button>
+    </div>
+
+    <script>
+
+        // Adding event listener for the child element
+        document.getElementById('child').addEventListener('click', function(event) {
+            alert('Child element clicked!');
+        });
+
+        
+        // Adding event listener for the parent element
+        document.getElementById('parent').addEventListener('click', function(event) {
+            alert('Parent element clicked!');
+        }); 
+
+    </script>
+</body>
+</html>
+
+
+<!-- 
+
+In this example:
+
+    There is a div element with an id of parent.
+    Inside the div, there is a button element with an id of child.
+
+What Happens When we Click the Button
+
+    Capturing Phase: The event starts from the html element and travels down through the body and div elements to the button element.
+
+    Target Phase: The event reaches the button element, and the button's event listener is executed, showing the alert "Child element clicked!".
+
+    Bubbling Phase: After the button's event listener is executed, the event bubbles up. It travels from the button element back up to the div element, and the div's event listener is executed, showing the alert "Parent element clicked!".
+
+-->
+
+
+
+
+
+
+
+<!-- 
+
+Stopping Event Propagation
+
+If you want to prevent the event from propagating to parent elements, you can use event.stopPropagation().
+
+example code :
+
+<script>
+    // Adding event listener for the parent element
+    document.getElementById('parent').addEventListener('click', function(event) {
+        alert('Parent element clicked!');
+    });
+
+    // Adding event listener for the child element
+    document.getElementById('child').addEventListener('click', function(event) {
+        alert('Child element clicked!');
+        event.stopPropagation();  // This will stop the event from bubbling up to the parent
+    });
+</script>
+
+Now, when you click the button:
+
+    The button's event listener is executed, showing the alert "Child element clicked!".
+    The event.stopPropagation() method stops the event from bubbling up, so the div's event listener will not be executed, and the alert "Parent element clicked!" will not be shown.
+
+Summary
+
+    Event Capturing: Event travels from the root to the target element.
+    Event Targeting: Event reaches the target element.
+    Event Bubbling: Event travels from the target element back up to the root.
+    Stopping Propagation: Use event.stopPropagation() to prevent the event from moving to parent elements.
+
+Understanding event propagation helps you manage and control the flow of events in your web applications, ensuring that events are handled in the most efficient way.
+
+
+-->
+
+
