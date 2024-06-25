@@ -1,4 +1,4 @@
-// this method gives the random value between o to 1, but not the 1.
+// this(math.random()) method gives the random value between 0 and 1, but not the 1.
 
 // you can control the range of random of num you want like if you want 0 to 5 then multiply by 5 or if you want 0 to 10 the * 10, but some time we could get 0 value too so if we donot want that we could add + 1 to avoid that case.  all comes in decimal so we will use another method by wraping it up with math.floor method, you can use .round too
 // ---> console.log(Math.floor(Math.random()* 5 + 1));
