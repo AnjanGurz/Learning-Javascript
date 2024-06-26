@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Async project </title>
+</head>
+<body>
+    <h1> Crunky codes </h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+
+    /*
+    Explanation:
+
+    setTimeout is a function in JavaScript used to schedule a function (or a code snippet) to execute after a specified delay.
+
+        Syntax:
+
+        javascript
+
+        setTimeout(function() {
+            // Code to be executed after delay
+        }, delay_in_milliseconds);
+
+        Example:
+
+        javascript
+
+        // Example: Print a message after 3 seconds
+        setTimeout(function() {
+            console.log("Hello after 3 seconds!");
+        }, 3000); // 3000 milliseconds = 3 seconds
+    
+    */
+    // setTimeout method also calls the API 
+
+    // setTimeout(()=> console.log("Anjan First delayed") , 2000 )
+    // console.log("Anjan Second");
+
+    const sayAnjan = ()=> console.log("Anjan  delayed and passed as ref call back");
+
+    const changeText = () => {
+        document.querySelector('h1').innerText = 'Anjan code JS'
+    }
+
+    // setTimeout(sayAnjan, 3000)
+    const changeMe = setTimeout(changeText, 3000)
+
+    const clearMe =  () => {clearTimeout(changeMe)
+        console.log('stopped by clearTimeout');
+    };
+    
+     const stopBtn = document.querySelector("#stop")
+
+     stopBtn.addEventListener('click', clearMe)
+
+
+
+
+
+
+    /*
+    
+    setInterval Method
+
+        Explanation:
+
+            setInterval is a function in JavaScript that repeatedly executes a function (or a code snippet) at a specified interval.
+
+        Syntax:
+
+        let intervalId = setInterval(function() {
+            // Code to be executed at each interval
+        }, interval_in_milliseconds);
+
+        
+        
+        Example:
+
+        // Example: Print a count every second, stop after 5 counts
+        let counter = 0;
+        let intervalId = setInterval(function() {
+            counter++;
+            console.log("Interval count:", counter);
+            if (counter === 5) {
+                clearInterval(intervalId); // Stops the interval after 5 counts
+            }
+        }, 1000); // 1000 milliseconds = 1 second
+    
+
+
+        => clearInterval Method
+
+            Explanation:
+
+                clearInterval is used to stop the execution of a function set by setInterval.
+
+            Syntax:
+
+            clearInterval(intervalId);
+
+
+            Example:
+
+            // Example: Stop the interval after 3 seconds
+            let intervalId = setInterval(function() {
+                console.log("Running...");
+            }, 1000); // Execute every 1 second
+
+            // Stop the interval after 3 seconds
+            setTimeout(function() {
+                clearInterval(intervalId);
+                console.log("Interval stopped after 3 seconds.");
+            }, 3000); // 3000 milliseconds = 3 seconds
+    */
+</script>
+</html>

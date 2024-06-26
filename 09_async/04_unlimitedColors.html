@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body style="background-color: #212121; color: #fff">
+
+    <h1>Start should change the Background color every second</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <script>
+
+        // creating  random hexcode for color change
+        const randomColorGenerator = () => {
+            const hexcode = "0123456789ABCDEF";
+            let color ='#';
+            for(let i = 0; i<6; i++){
+                color += hexcode[Math.floor(Math.random() * 16)] // In JavaScript, strings can be accessed like arrays using bracket notation to access individual characters. here we accessed from hexcode variable and added into color variable
+            }
+            return color;
+        }
+
+        console.log(randomColorGenerator());
+
+        // variables
+        const body = document.querySelector('body')
+        const startBtn = document.querySelector("#start")
+        const stopBtn = document.querySelector("#stop");
+
+
+        // method to change color of bgground with random color generator
+        
+        let intervalId = '';
+        /*
+        
+        Taking intervalId variable to store is necessary to store the return value of setInterval. Here's why:
+
+        Return Value of setInterval: When you call setInterval, it returns a numeric ID (often referred to as the interval ID) that identifies the interval timer created by setInterval.
+
+        Needed for clearInterval: To stop (clear) the interval later using clearInterval, you must pass this interval ID as an argument to clearInterval. This is the only way to instruct JavaScript to stop the interval timer.
+
+        Scope and Access: By storing the interval ID in a variable (intervalId in this case), you ensure that you have access to this ID outside of the changeBackgroundColor function. This allows other parts of your script (like the stopChangingColor function) to reference and clear the interval when necessary.
+        
+        */
+
+        // method to start changin color
+        const StartChangingColor = () => {
+
+            const changeBgColor = () => {
+                body.style.backgroundColor = randomColorGenerator();
+                // Or you can directly target like below using directly with the document
+                // document.body.style.backgroundColor = randomColorGenerator();
+                
+            }
+
+            // changing color every second
+            intervalId = setInterval(changeBgColor, 1000)
+            /*
+            after you call setInterval and store its return value in a
+            variable, the interval timer starts running automatically.
+            */
+        }
+
+        // method to stop chaning color
+        const StopChangingColor = () => {
+            
+            clearInterval(intervalId);
+            intervalId = null; // optimized code by clearing it to avoid ovverride dsa implemention
+            
+        }
+
+
+        startBtn.addEventListener('click', StartChangingColor);
+        stopBtn.addEventListener('click', StopChangingColor);
+
+
+        
+
+
+    </script>
+  </body>
+</html>

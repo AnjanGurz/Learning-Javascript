@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercise </title>
+</head>
+<body>
+    <h1> Exercise page </h1>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+</body>
+<script>
+    const sayDate = (str) =>{
+        console.log(str, Date.now())
+    }
+
+    const setInter = () => {
+        setInterval(sayDate, 2000, 'anjan set interval'); // it also takes 3rd parameter to pass the arg for the call back , ->the third parameter hi is argg of the call back sayDate
+    }
+
+
+    const stopInter = () => {
+        clearInterval(setInter)
+        console.log(' anjan stopped interval');
+    }
+
+
+    const select = para => document.querySelector(para);
+
+    const startBtn = select('#start')
+    const stopBtn = select('#stop')
+
+    startBtn.addEventListener('click', setInter);
+    stopBtn.addEventListener('click', stopInter);
+
+
+</script>
+</html>
