@@ -13,7 +13,7 @@ let isLoggedIn = false
 
 // DATATYPES:
 
-// non-primitive dataType:
+// Primitive dataType:
 // number => 2 to power 53
 // bigint
 // string => " "
