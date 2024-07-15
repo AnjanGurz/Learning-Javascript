@@ -70,9 +70,12 @@
     
     --Non-Blocking Code:
 
-        Non-blocking code allows the program to keep going while waiting for a task to finish. It's like ordering a coffee and being told to come back later to pick it up, so you can do other things while your coffee is being made.
+        Non-blocking code allows the program to keep going while waiting for a task to finish. 
+        It's like ordering a coffee and being told to come back later to pick it up, 
+        so you can do other things while your coffee is being made.
 
-            Example: When you make an asynchronous call (like fetching data from a server or reading a file), your program can continue to do other things instead of waiting.
+            Example: When you make an asynchronous call (like fetching data from a server or reading a file), 
+            your program can continue to do other things instead of waiting.
 
             --code exp:
                 // Non-blocking example with callback
