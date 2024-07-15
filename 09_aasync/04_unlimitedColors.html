@@ -5,14 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Number Guessing Game</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      body{
+        display: flex;
+        justify-content: center;
+        margin-top: 100px;       
+      }
+
+      .btns{
+        display: flex;
+        justify-content: center;
+        justify-content: space-evenly;
+      }
+
+      .btn{
+        padding: 20px;
+        border-radius: 24px;
+      }
+
+      .btn:hover{
+        background: gray;
+        color: white;
+      }
+
+
+
+    </style>
   </head>
   <body style="background-color: #212121; color: #fff">
 
-    <h1>Start should change the Background color every second</h1>
-    <button id="start">Start</button>
-    <button id="stop">Stop</button>
+    <div id="main">
+      <h1>Start should change the Background color every second</h1>
+    <div class="btns">
+      <button id="start" class="btn">Start</button>
+      <button id="stop" class="btn">Stop</button>
+    </div>
+    </div>
     <script>
 
         // creating  random hexcode for color change
@@ -33,7 +61,7 @@
         const stopBtn = document.querySelector("#stop");
 
 
-        // method to change color of bgground with random color generator
+        // method to change color of bgGround with random color generator
         
         let intervalId = '';
         /*

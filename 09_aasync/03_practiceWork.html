@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise</title>
+
+    <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Exercise page</h1>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+  </body>
+  <script>
+    const sayDate = (str) => {
+      console.log(str, Date.now());
+    };
+
+    let inter = "";
+
+    const setInter = () => {
+      inter = setInterval(sayDate, 2000, "anjan set interval"); // it also takes 3rd parameter to pass the arg for the call back , ->the third parameter hi is argUMENT of the call back sayDate
+    };
+
+    const stopInter = () => {
+      clearInterval(inter);
+      console.log(" anjan stopped interval");
+    };
+
+    const select = (para) => document.querySelector(para);
+
+    const startBtn = select("#start");
+    const stopBtn = select("#stop");
+
+    startBtn.addEventListener("click", setInter);
+    stopBtn.addEventListener("click", stopInter);
+
+    /*
+
+    When using setInterval, you need to store the ID it returns in a variable. This ID is necessary for stopping the interval later with clearInterval. Here’s a quick summary:
+
+    Store the ID: When you call setInterval, it returns a unique ID for that interval. You should assign it to a variable.
+
+    Use the ID for Stopping: You can then use that variable with clearInterval to stop the interval when needed.
+
+    This approach allows you to manage your intervals effectively!
+    
+    */
+  </script>
+</html>

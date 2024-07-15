@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Async project </title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <h1> Crunky codes </h1>
@@ -17,8 +23,7 @@
     setTimeout is a function in JavaScript used to schedule a function (or a code snippet) to execute after a specified delay.
 
         Syntax:
-
-        javascript
+        setTimeout(callbackFunction, delay);
 
         setTimeout(function() {
             // Code to be executed after delay
@@ -39,16 +44,18 @@
     // setTimeout(()=> console.log("Anjan First delayed") , 2000 )
     // console.log("Anjan Second");
 
-    const sayAnjan = ()=> console.log("Anjan  delayed and passed as ref call back");
+    const sayAnjan = () => console.log("Anjan  delayed and passed as ref call back");
 
     const changeText = () => {
-        document.querySelector('h1').innerText = 'Anjan code JS'
+        document.querySelector('h1').innerText = 'Anjan code JS';
+        console.log("Text changed Successfully with the execution of setTimeout")
     }
 
     // setTimeout(sayAnjan, 3000)
     const changeMe = setTimeout(changeText, 3000)
 
-    const clearMe =  () => {clearTimeout(changeMe)
+    const clearMe =  () => {
+        clearTimeout(changeMe)
         console.log('stopped by clearTimeout');
     };
     
@@ -56,7 +63,27 @@
 
      stopBtn.addEventListener('click', clearMe)
 
+    /*
+    
+    Summary of Key Points:
 
+    Function Block: If setTimeout is inside a function, the callback is scheduled for execution only when that function is called. Until the parent function is invoked, the setTimeout and its callback do nothing.
+
+    Timeout Execution: Once the parent function is executed, the setTimeout starts its timer based on the specified delay. After that delay, the callback function executes.
+
+    Variable Storage: Storing the timeout ID in a variable allows you to manage the timeout (e.g., cancel it with clearTimeout) later on, but the execution of the callback still depends on the timer.
+
+        So, the scheduled function will run after the specified time only if the surrounding function (where setTimeout is defined) is executed first. This makes setTimeout quite flexible for use in various scenarios. Great job understanding it!
+
+
+    anjan's messy explainiton after clearing doubt haha:
+        When setTimeout is inside a function, the scheduled execution of the callback function occurs only when that outer function is called. 
+
+        oh thats what i was askin 
+        i got it unless it is wrapped under the block of code it wont run unless the parnet is executed 
+
+        but if it is intialzed into the variable to move around it will execute with the certain time of according to the argument is passed into it
+    */
 
 
 
@@ -114,6 +141,11 @@
                 clearInterval(intervalId);
                 console.log("Interval stopped after 3 seconds.");
             }, 3000); // 3000 milliseconds = 3 seconds
+
+
+            setTimeout is for executing a function once after a delay.
+            
+            setInterval is for executing a function repeatedly at regular intervals.
     */
 </script>
 </html>
