@@ -49,6 +49,7 @@
             let color ='#';
             for(let i = 0; i<6; i++){
                 color += hexcode[Math.floor(Math.random() * 16)] // In JavaScript, strings can be accessed like arrays using bracket notation to access individual characters. here we accessed from hexcode variable and added into color variable
+
             }
             return color;
         }
@@ -98,7 +99,8 @@
         const StopChangingColor = () => {
             
             clearInterval(intervalId);
-            intervalId = null; // optimized code by clearing it to avoid ovverride dsa implemention
+            intervalId = null; // optimized code by clearing it to avoid override dsa implemention // Optional: Helps manage state and prevent issues
+
             
         }
 

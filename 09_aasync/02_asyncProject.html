@@ -52,11 +52,11 @@
     }
 
     // setTimeout(sayAnjan, 3000)
-    const changeMe = setTimeout(changeText, 3000)
+    const changeMe = setTimeout(changeText, 3000);
 
     const clearMe =  () => {
         clearTimeout(changeMe)
-        console.log('stopped by clearTimeout');
+        console.log('stopped by anjan using clearTimeout method');
     };
     
      const stopBtn = document.querySelector("#stop")
@@ -80,7 +80,7 @@
         When setTimeout is inside a function, the scheduled execution of the callback function occurs only when that outer function is called. 
 
         oh thats what i was askin 
-        i got it unless it is wrapped under the block of code it wont run unless the parnet is executed 
+        i got it unless it is wrapped under the block of code it won't run until the parnet is executed 
 
         but if it is intialzed into the variable to move around it will execute with the certain time of according to the argument is passed into it
     */

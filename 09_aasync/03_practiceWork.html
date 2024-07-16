@@ -19,14 +19,12 @@
   </body>
   <script>
     const sayDate = (str) => {
-      console.log(str, Date.now());
+      const Date = new Date();
+      console.log(str, Date.getSeconds());
     };
 
-    let inter = "";
+    const inter = setInterval(sayDate, 2000, "anjan set interval at "); // it also takes 3rd parameter to pass the arg for the call back , ->the third parameter hi is argUMENT of the call back sayDate which pass the argu through the str parameter;
 
-    const setInter = () => {
-      inter = setInterval(sayDate, 2000, "anjan set interval"); // it also takes 3rd parameter to pass the arg for the call back , ->the third parameter hi is argUMENT of the call back sayDate
-    };
 
     const stopInter = () => {
       clearInterval(inter);

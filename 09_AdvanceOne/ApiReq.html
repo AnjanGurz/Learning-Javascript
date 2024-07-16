@@ -1,0 +1,87 @@
+<!-- 
+
+AJAX using a simple analogy.
+Analogy: Shopping Online
+
+Imagine you’re shopping online. Here’s how it relates to AJAX (Asynchronous JavaScript and XML):
+
+    Browsing Products: You’re looking at different products on an online store. Similarly, on a website, users interact with various parts of the page.
+
+    Adding to Cart Without Reloading: When you add an item to your cart, the page doesn’t refresh; instead, the cart updates in the background. This is like using AJAX to update parts of the webpage without reloading the whole page. AJAX allows web pages to be more interactive and dynamic.
+
+    Checking Stock Availability: If you click to see if a product is in stock, the site checks the database in the background and instantly updates the page with the information. AJAX is used here to send a request to the server and receive the response without refreshing the page.
+
+Use Case Examples
+
+    Auto-Complete Search: When you start typing in a search bar, suggestions appear instantly. This is done using AJAX. As you type, AJAX requests are sent to the server to fetch matching suggestions, which are then displayed in real time.
+
+    Live Chat: In a live chat application, messages are sent and received without refreshing the page. AJAX enables the chat interface to update in real time, providing a seamless experience.
+
+    Dynamic Content Loading: Websites like Facebook or Twitter use AJAX to load new posts or tweets as you scroll down. This allows for infinite scrolling, where new content loads dynamically without needing to refresh the page.
+
+Summary
+
+AJAX (Asynchronous JavaScript and XML) is a technique for creating fast and dynamic web pages. By exchanging data with a server behind the scenes, AJAX allows parts of a web page to update without a full page reload, enhancing the user experience. It’s like shopping online where you can add items to your cart, check stock availability, and get suggestions without needing to refresh the entire site.
+ -->
+
+
+ <!-- 
+ common http methods:-
+  
+    GET is ideal for retrieving data.
+    POST is suitable for submitting forms or uploading files.
+    PUT is used for updates
+    DELETE removes resources.
+ 
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    0	UNSENT	Client has been created. open() not called yet.
+
+    1	OPENED	open() has been called.
+
+    2	HEADERS_RECEIVED	send() has been called, and     headers and status are available.
+
+    3	LOADING	Downloading; responseText holds partial data.
+
+    4	DONE	The operation is complete.
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/AnjanGurz'
+
+    const xhr = new XMLHttpRequest();
+
+    xhr.open('GET', requestUrl);
+
+    /*
+    onreadystatechange:
+
+    This event handler is triggered every time the readyState changes (0 to 4).
+    You need to check xhr.readyState and xhr.status to determine the status of the request.
+    
+    */
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText) // retrived the data json and changing into obj using json parse //-> most of the time we get data as string when we request so we convert
+            console.log(data); // displaying the obj on console to view
+            console.log(typeof data); // checking type of data we got from api
+            console.log(data.login);
+            console.log(data.following);
+        }
+    }
+
+    // console.log(`here`);
+    // console.log(xhr.readyState); // 1 -> open has been called
+    xhr.send(); // method is used to send the request to the server. Here's how it works and what you need to know:
+    
+</script>
+</html>
