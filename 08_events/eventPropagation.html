@@ -1,7 +1,9 @@
 
 
 <!-- 
-    Event propagation is a fundamental concept in web development, specifically in the context of handling events in the Document Object Model (DOM). It describes the way events move through the DOM tree. There are three main phases of event propagation: capturing, targeting, and bubbling. Let's break these down in the simplest terms.
+    Event propagation is a fundamental concept in web development, specifically in the context of handling events in the Document Object Model (DOM). 
+    It describes the way events move through the DOM tree. There are three main phases of event propagation: capturing, targeting, and bubbling.
+    Let's break these down in the simplest terms.
 
     1. Capturing Phase (Event Capturing)
 
@@ -25,17 +27,22 @@
     ---The third -> useCapture(true, false) Parameter in addEventListener & the stop propagtion method and how it differs from this
 
     useCapture set to true:
-        When useCapture is true in addEventListener, it means the event listener reacts during the capturing phase, which means the event execution happens first before reaching the target element.
+        When useCapture is true in addEventListener, it means the event listener reacts during the capturing phase, 
+        which means the event execution happens first before reaching the target element.
         This phase starts from the outermost ancestor element and moves towards the target element.
-        It's like setting up early security checks or preparations before an event reaches its final destination (the target element). Useful for intercepting events early in the DOM hierarchy, before they can affect child elements.
+        It's like setting up early security checks or preparations before an event reaches its final destination (the target element). 
+        Useful for intercepting events early in the DOM hierarchy, before they can affect child elements.
 
     Default (useCapture set to false or omitted):
-        When useCapture is false or omitted in addEventListener, events are handled during the bubbling phase. This phase moves from the target element back up towards the outermost ancestor element.
-        This default mode is like reacting after an event has happened on the target and now you're seeing how it affects the surroundings. It's the most common way to handle events, letting them naturally flow back up through the DOM.
+        When useCapture is false or omitted in addEventListener, events are handled during the bubbling phase. 
+        This phase moves from the target element back up towards the outermost ancestor element.
+        This default mode is like reacting after an event has happened on the target and now you're seeing how it affects the surroundings. 
+        It's the most common way to handle events, letting them naturally flow back up through the DOM.
 
 event.stopPropagation()
 
-    Usage: Calling event.stopPropagation() inside an event handler prevents the event from propagating further through the DOM after it's been handled on the target element.
+    Usage: Calling event.stopPropagation() inside an event handler prevents the event from propagating further through the DOM after 
+    it's been handled on the target element.
     Effect: It's like saying, "Stop right here!" to prevent any additional actions or reactions from parent or sibling elements.
 
 Summary
@@ -99,7 +106,8 @@ What Happens When we Click the Button
 
     Target Phase: The event reaches the button element, and the button's event listener is executed, showing the alert "Child element clicked!".
 
-    Bubbling Phase: After the button's event listener is executed, the event bubbles up. It travels from the button element back up to the div element, and the div's event listener is executed, showing the alert "Parent element clicked!".
+    Bubbling Phase: After the button's event listener is executed, the event bubbles up. It travels from the button element back up to the div element,
+    and the div's event listener is executed, showing the alert "Parent element clicked!".
 
 -->
 
@@ -133,7 +141,8 @@ example code :
 Now, when you click the button:
 
     The button's event listener is executed, showing the alert "Child element clicked!".
-    The event.stopPropagation() method stops the event from bubbling up, so the div's event listener will not be executed, and the alert "Parent element clicked!" will not be shown.
+    The event.stopPropagation() method stops the event from bubbling up, so the div's event listener will not be executed, 
+    and the alert "Parent element clicked!" will not be shown.
 
 Summary
 
@@ -142,7 +151,8 @@ Summary
     Event Bubbling: Event travels from the target element back up to the root.
     Stopping Propagation: Use event.stopPropagation() to prevent the event from moving to parent elements.
 
-Understanding event propagation helps you manage and control the flow of events in your web applications, ensuring that events are handled in the most efficient way.
+Understanding event propagation helps you manage and control the flow of events in your web applications, 
+ensuring that events are handled in the most efficient way.
 
 
 -->
