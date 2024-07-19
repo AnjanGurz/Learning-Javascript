@@ -18,7 +18,7 @@
         xhr.open('GET', 'https://official-joke-api.appspot.com/random_joke', true);
     
         // Set up a function to handle the response
-        xhr.onload = function() {
+        xhr.onreadystatechange = function() {
             if (xhr.status == 200) {
                 // Parse the JSON response
                 var joke = JSON.parse(xhr.responseText);

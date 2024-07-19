@@ -60,6 +60,15 @@ Summary
         Ensures that the event's influence doesn't spread beyond where it's intended to act.
 
 
+        Event delegation
+            It is a technique in JavaScript where you add a single event listener to a parent element instead of adding multiple event listeners to individual child elements. This is particularly useful when you have a large number of child elements, or when the child elements are dynamically added or removed.
+
+        How Event Delegation Works
+
+            Event delegation takes advantage of the event bubbling phase, where an event starts from the target element and bubbles up to the ancestors. By attaching the event listener to a common parent, you can handle events for multiple child elements efficiently.
+            Example
+
+            Let's say you have a list of items and you want to handle click events on each item. Instead of attaching a click event listener to each item, you can attach one to the parent <ul> element.
 
 
 -->

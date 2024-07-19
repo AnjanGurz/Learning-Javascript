@@ -14,3 +14,19 @@ Imagine you are building a website that needs to display weather information. In
 This approach allows developers to focus on the unique aspects of their projects while leveraging the capabilities provided by other services through APIs.
 
 */
+
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "https://api.example.com/data", true); // true for asynchronous
+
+// Set up the callback function to handle the response
+xhr.onreadystatechange = function () {
+  // Check if the request is complete and successful
+  if (xhr.readyState === 4 && xhr.status === 200) {
+    console.log(xhr.responseText); // Process the response
+  }
+};
+
+// Send the request
+xhr.send();
+
+console.log("Request sent, continuing execution..."); // This will run immediately

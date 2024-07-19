@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color changer using promise with async operation </title>
+</head>
+<body style="background-color: #000; color: white;">
+
+    <h1 style="text-align: center;">Changing color with async operation using promises </h1>
+
+    <h1 id="target" style="text-align: center; font-size: 100PX;">Crunky</h1>
+</body>
+<script>
+    const h1 = document.querySelector("#target");
+    const DELAY = 2000; // constant variable for delay
+
+    const changeColor = (color) => { 
+        let msg = "color changed into";
+        return new Promise((resolve , reject) => {
+            setTimeout(()=> {
+                h1.style.color = color;
+                resolve(`${msg} ${color} after ${DELAY}ms`);
+            }, DELAY);
+        })
+    }
+
+    // using promise chaining instead of callback hell
+    // changeColor('red').then((result)=>{
+    //     console.log(result);
+    //     return changeColor('blue');
+    // })
+
+    // .then((result)=>{
+    //     console.log(result);
+    //     return changeColor('green');
+    // })
+
+    // .then((result) => {
+    //     console.log(result);
+    //     return changeColor('orange');
+
+    // })
+
+    // .then((result) => {
+    //     console.log(result);
+    //     return changeColor('white');
+
+    // })
+
+    // .then((result) => {
+    //     console.log(result);
+    //     return changeColor('pink');
+
+    // })
+
+    // .then((result) => {
+    //     console.log(result);
+    // })
+
+    // .catch((error) => {
+    //     console.log('oops', error.message);
+    // });
+
+    async function demo () {
+        await changeColor('red');
+        await changeColor('blue');
+        await changeColor('green');
+        await changeColor('yellow');
+        await changeColor('orange');
+        await changeColor('purple');
+        await changeColor('pink');
+    }
+
+
+
+</script>
+</html>
