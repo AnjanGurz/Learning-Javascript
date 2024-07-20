@@ -71,7 +71,7 @@ promiseFour
  async function consumePromiseFive(){
     // to handle error we use try and catch in async await
     try {
-        const response = await promiseFive
+        const response = await promiseFive // used await to handle the delay so the the promise five be able to run first and can be stored into response
         console.log(response);
     } catch (error) {
         console.log(error);
@@ -79,3 +79,37 @@ promiseFour
  }
 
  consumePromiseFive();
+
+ /* In JavaScript, async functions are used to handle asynchronous operations. 
+ An async function always returns a promise, and inside an async function, 
+ you can use the await keyword to wait for promises to resolve. */
+
+//  async function getAllUsers(){
+//   try {
+//     const response = await fetch ('https://api.github.com/')
+//     const data = await response.json() // note to convert the json it also takes time so we should use await
+//     console.log(data);
+//     // console.log(response);
+//   } catch (error) {
+//     console.log(error);
+//   }
+//  }
+
+
+
+//  getAllUsers();
+
+
+fetch('https://official-joke-api.appspot.com/random_joke')
+.then((response)=>{
+  return response.json(); // this itself method is a promise 
+  
+})
+.then((data) => console.log(data))
+.catch((error) => console.log('oops : ', error));
+
+
+
+/* response.json(): Returns a promise because JSON parsing is an asynchronous operation.
+Proper Handling: To get the actual data, you must return the promise from response.json() and handle it in the next .then() in the chain.
+Chaining .then(): Ensures that you handle the resolved data properly and not the promise object itself. */
