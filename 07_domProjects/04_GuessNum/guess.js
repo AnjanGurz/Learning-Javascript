@@ -61,11 +61,15 @@ function checkGuess(guess) {
   // to check if the guess is right
   if (guess === randomNum) {
     displayMessage(`Yahoo! Congrats, You guessed it right number ${guess} is the correct random number.`);
+    lowOrHi.style.color = 'green'
     endGame();
   } else if (guess < randomNum) {
     displayMessage("Num is too low...");
+    lowOrHi.style.color = 'red'
   } else if (guess > randomNum) {
     displayMessage("Num is too high....");
+    lowOrHi.style.color = 'red'
+
   }
 }
 
