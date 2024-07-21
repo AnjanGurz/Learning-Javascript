@@ -105,11 +105,14 @@ fetch('https://official-joke-api.appspot.com/random_joke')
   return response.json(); // this itself method is a promise 
   
 })
-.then((data) => console.log(data))
-.catch((error) => console.log('oops : ', error));
+.catch((error) => console.log('oops : ', error))
 
 
 
 /* response.json(): Returns a promise because JSON parsing is an asynchronous operation.
 Proper Handling: To get the actual data, you must return the promise from response.json() and handle it in the next .then() in the chain.
 Chaining .then(): Ensures that you handle the resolved data properly and not the promise object itself. */
+
+
+
+
