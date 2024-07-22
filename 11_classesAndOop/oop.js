@@ -11,7 +11,8 @@ const user = {
 };
 
 // console.log(this);
-// while running in node it gives the empty obj but if you run this in browser it gives window obj containing whole builtin methods of js
+// while running in node it gives the empty obj but if you run this in browser 
+// it gives window obj containing whole builtin methods of js
 
 // understanding constructor by simulating the function example and new keyword
 
@@ -39,7 +40,8 @@ console.log(userTwo);
 
 console.log(userOne.constructor);
 /*
-In JavaScript, (.constructor) is a property of an object that refers to the function that created the instance of that object. It's a way to identify the constructor function or class that was used to create the object.
+In JavaScript, (.constructor) is a property of an object that refers to the function that created the instance of that object.
+It's a way to identify the constructor function or class that was used to create the object.
 */
 
 
@@ -47,10 +49,10 @@ In JavaScript, (.constructor) is a property of an object that refers to the func
 
 **************instanceof***************
 
-The instanceof operator in JavaScript is used to check whether an object is an instance of a specific class or constructor function. It allows you to determine the type of an object and ensure it conforms to a particular structure or behavior.
-Syntax
+The instanceof operator in JavaScript is used to check whether an object is an instance of a specific class or constructor function.
+It allows you to determine the type of an object and ensure it conforms to a particular structure or behavior.
 
-javascript
+Syntax:
 
 object instanceof Constructor
 
@@ -59,6 +61,9 @@ object instanceof Constructor
 
 How It Works
 
-The instanceof operator checks the prototype chain of the object to see if it contains the Constructor's prototype. If it does, the result is true; otherwise, it's false.
+The instanceof operator checks the prototype chain of the object to see if it contains the Constructor's prototype.
+If it does, the result is true; otherwise, it's false.
+
+
 
 */
