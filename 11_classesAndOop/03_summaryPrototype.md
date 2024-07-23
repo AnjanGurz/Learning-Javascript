@@ -9,22 +9,45 @@
 
 ## Examples
 
-* Added `truelength` method to `String.prototype`
-* Added `heyAnjan` method to `Array.prototype`
-* Made `TASupport` inherit from `teachingSupport`
-* Made `teacher` inherit from `user`
-* Created a constructor function `Person` with a method `sayName` and instances `john` and `jane` inherit that method using `new` keyword.
-
-## Remember
-
-* Prototypes are like templates
-* Inheritance helps objects share properties and methods
-* You can add methods to specific prototypes for reuse
-* Constructor functions use prototypes to set methods for instances created with `new`
-
-## Example Code
+### Adding methods to prototypes
 
 ```javascript
+// Add truelength method to String.prototype
+String.prototype.truelength = function() {
+  return this.trim().length;
+}
+
+// Add heyAnjan method to Array.prototype
+Array.prototype.heyAnjan = function() {
+  console.log('Anjan says hello to you...');
+}
+
+## Inheritance using __proto__
+
+// Make TASupport inherit from teachingSupport
+const teachingSupport = {
+  isAvailable: false
+}
+const TASupport = {
+  makeAssignment: 'JS assignment',
+  fullTime: true,
+  __proto__: teachingSupport
+}
+
+// Make teacher inherit from user
+const user = {
+  name: 'chai',
+  email: 'hund@gmail.com'
+}
+const teacher = {
+  makeVideo: true,
+  __proto__: user
+}
+
+
+## Constructor function with inheritance
+
+// Created a constructor function Person with a method sayName
 function Person(name) {
   this.name = name;
 }
@@ -33,8 +56,17 @@ Person.prototype.sayName = function() {
   console.log(this.name);
 }
 
+// Instances john and jane inherit the sayName method using new keyword
 let john = new Person('John');
 let jane = new Person('Jane');
 
 john.sayName(); // Output: John
 jane.sayName(); // Output: Jane
+
+
+## Points to remember
+
+    Prototypes are like templates
+    Inheritance helps objects share properties and methods
+    You can add methods to specific prototypes for reuse
+    Constructor functions use prototypes to set methods for instances created with new
