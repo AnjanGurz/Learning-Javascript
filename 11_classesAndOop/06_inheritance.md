@@ -14,24 +14,25 @@ class User {
 
 Child Class: Teacher (extends User)
 -----------------------------------
-
+```javascript
 class Teacher extends User {
   constructor(userName, email, password, subject) {
     super(userName, email, password); // Calls User constructor
     this.subject = subject; // Additional property in Teacher
   }
 }
+```
 
 Creating Teacher instances
 -------------------------
-
+```javascript
 const teacher1 = new Teacher('John Doe', 'johndoe@example.com', 'password123', 'Math');
 const teacher2 = new Teacher('Jane Smith', 'janesmith@example.com', 'password456', 'Science');
 const teacher3 = new Teacher('Bob Johnson', 'bobjohnson@example.com', 'password789', 'English');
-
+```
 Output
 ------
-
+```javascript
 console.log(teacher1.userName); // John Doe
 console.log(teacher1.email); // johndoe@example.com
 console.log(teacher1.password); // password123
@@ -46,6 +47,7 @@ console.log(teacher3.userName); // Bob Johnson
 console.log(teacher3.email); // bobjohnson@example.com
 console.log(teacher3.password); // password789
 console.log(teacher3.subject); // English
+```
 
 Key points
 -----------
