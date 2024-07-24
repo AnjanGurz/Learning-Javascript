@@ -60,3 +60,24 @@ Key points
 * We can create multiple instances of Teacher with different values for the properties
 
 By using inheritance, we can reuse the properties and behavior of the User class in the Teacher class, while also adding new properties and behavior specific to Teacher. This helps to promote code reuse and organization!
+
+
+Another Point
+--------------
+
+Using super in Inheritance Chaining
+
+* super keyword is used to access parent class's constructor, methods, and properties
+* In inheritance chaining, super refers to the immediate parent class
+* Each derived class can access its parent class's members using super
+* The last derived class can access all parent classes' members through super
+
+Example:
+-------
+
+Grandparent -> Parent -> Child
+
+* Child can access Parent's members using super
+* Child can also access Grandparent's members through Parent's super
+
+This allows the last derived class (Child) to inherit and access all the members (properties and methods) of its parent classes (Parent and Grandparent).
