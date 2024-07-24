@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body style="background-color: black;">
+    <button style="padding: 20px;"> btn clicked</button>
+</body>
+
+<script>
+
+    class React{
+        constructor(){
+            this.library = 'React'
+            this.server = 'https://localhost:300'
+            
+
+            //requirement
+
+            // Tried to direct call the method to see if it would work or not if not why so i found hoisting error here in class. it's fun to learn with in an investigative way
+
+            handleClick(); // error coz hoisting doesnot work in class context
+               // Hoisting in JavaScript does not work within the context of classes in the same way it does with functions or variables.
+
+            // so binding
+            document
+                .querySelector('button')
+                .addEventListener('click', this.handleClick.bind(this))
+                // this inside the bind which is attached(bound to) with handleclick refers to the instance(app) properties (this context) coz after we instansiate the constructor will be called automatically and it gives the value of all of it to the instance of it ?
+
+        }
+        
+        handleClick(){
+            console.log("button clicked");
+            console.log(this.server);
+        }
+    }
+
+    const app = new React()
+    console.log(app.library);
+    
+
+</script>
+
+</html>
