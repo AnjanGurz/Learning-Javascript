@@ -3,7 +3,7 @@ Inheritance with super
 
 Parent Class: User
 -------------------
-
+```javascript
 class User {
   constructor(userName, email, password) {
     this.userName = userName;
@@ -11,6 +11,7 @@ class User {
     this.password = password;
   }
 }
+```
 
 Child Class: Teacher (extends User)
 -----------------------------------
