@@ -20,7 +20,8 @@ console.log(chai);
 /*
 
 
-Using call
+Using call:
+
 When you use call to invoke a method, you're passing the current this context to another method, allowing it to execute in a different context.
 
     The original method's this context is like the current room you're in.
@@ -52,5 +53,26 @@ Here's what happens when you use call:
 If you don't use call, the this context will not be passed, and the method will execute in the global context. The call stack life remains the same, but the method will not have access to the original object's properties and values.
 
 
+
+*/
+
+/*
+
+summary of how this works in JavaScript:
+Regular functions
+
+    Look for this in the current context (scope)
+    If not found, default to the global context (window or global object)
+
+Arrow functions
+
+    Only look for this within the scope they're defined in (lexical scope)
+    Do not have their own this context, so they can't be used with call or apply
+
+Using call
+
+    Allows you to pass a custom context (object or method) to a function
+    The function will use the passed context as its this value
+    Enables you to control the value of this within a function, even if it's not the default global context
 
 */

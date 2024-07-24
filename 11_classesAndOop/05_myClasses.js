@@ -22,6 +22,11 @@ console.log(coffee.encryptPassword());
 
 console.log(coffee.changeUsername());
 
+
+
+
+
+
 // behind the scene
 
 function User(username, email, password) {
