@@ -5,7 +5,7 @@ class User {
     }
 
 
-    // note if we are putting getters and setters we have to put it both not only setters with out getter (viceversa) if we do that there would be an error
+    // note if we are putting getters and setters we have to put it both not only setters with out getter (viceversa) if we do not define both then there would be an error
 
     get email(){
         return this._email 
