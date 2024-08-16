@@ -88,12 +88,27 @@ console.log(Object.entries(tinderUser)); //  takes keyvalue pairs as an array an
 // ex output of entries method: [ [ 'id', '123xyz' ], [ 'name', 'Sam' ], [ 'isLoggedIn', false ] ]
 
 /*
------IMPORTANT POINT-----
+
+
+-----------------------------------IMPORTANT POINT-----------------------------------------
+
 ! Only When you use methods like Object.keys(), Object.values(), or Object.entries(), they return as an array that represent the properties of the object in various formats.
 
-    Object.keys(obj) returns an array of the object's own enumerable property keys.
-    Object.values(obj) returns an array of the object's own enumerable property values. - values of key return as an in array format
-    Object.entries(obj) returns an array of the object's own enumerable property [key, value] pairs.
+=> Object Methods: Simple Explanation
+
+Object.keys(obj): Gets an array of an object's property names (keys).
+    Example: Object.keys({ name: 'John', age: 30 }) returns ['name', 'age'].
+
+Object.values(obj): Gets an array of an object's property values.
+    Example: Object.values({ name: 'John', age: 30 }) returns ['John', 30].
+
+Object.entries(obj): Gets an array of an object's key-value pairs.
+    Example: Object.entries({ name: 'John', age: 30 }) returns [ ['name', 'John'], ['age', 30] ].
+    
+Think of it like a dictionary:
+    keys() gives you the words (keys)
+    values() gives you the definitions (values)
+    entries() gives you both the words and definitions together (key-value pairs)
 
 These methods provide array-like access to the properties of an object, allowing you to iterate over them or perform other array operations. However, the underlying data structure of the object itself is not an array. It's typically a hash table or dictionary optimized for quick property access based on keys
 
@@ -122,11 +137,11 @@ const course = {
 // another way -> Object Destructuring 
 /*
 
-Object destructuring is a syntax in JavaScript that allows you to extract properties from objects and bind them to variables. This is particularly useful for working with objects in a more concise and readable way.
+Object destructuring is a syntax in JavaScript that allows you to extract properties from objects and bind(assign) them to variables. This is particularly useful for working with objects in a more concise and readable way.
 
 syntax:
 variableType {keyName} = object(that is from key)
-
+    same with an Array -> variableType [Name you wanna give to the index] = array
 now you can access it by directly with the keyName as variable after 
 const {courseInstructor} = course; 
 // where course is an variable holding an obj and courseInstructor is it's key
